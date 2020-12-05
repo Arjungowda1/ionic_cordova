@@ -11,6 +11,7 @@ import { ContactPage } from '../pages/contact/contact';
 import { DishdetailPage } from '../pages/dishdetail/dishdetail';
 import { MyfavoritesPage } from '../pages/myfavorites/myfavorites';
 import { ReservationPage } from '../pages/reservation/reservation';
+import { CommentsPage } from '../pages/comments/comments';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -30,7 +31,8 @@ import { FavoriteProvider } from '../providers/favorite/favorite';
     ContactPage,
     DishdetailPage,
     MyfavoritesPage,
-    ReservationPage
+    ReservationPage,
+    CommentsPage
   ],
   imports: [
     BrowserModule,
@@ -47,7 +49,8 @@ import { FavoriteProvider } from '../providers/favorite/favorite';
     ContactPage,
     DishdetailPage,
     MyfavoritesPage,
-    ReservationPage
+    ReservationPage,
+    CommentsPage
   ],
   providers: [
     StatusBar,

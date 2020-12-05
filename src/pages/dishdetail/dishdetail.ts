@@ -1,7 +1,8 @@
 import { Component, Inject } from '@angular/core';
-import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController, ActionSheetController, ModalController } from 'ionic-angular';
 import { Dish } from '../../shared/dish';
 import { FavoriteProvider } from '../../providers/favorite/favorite';
+import { CommentsPage } from '../../pages/comments/comments';
 
 /**
  * Generated class for the DishdetailPage page.
@@ -24,10 +25,14 @@ export class DishdetailPage {
   total:number;
   favorite:boolean = false;
 
+  value:any;
+
   constructor(public navCtrl: NavController, public navParams: NavParams,
     @Inject('BaseURL') private BaseURL,
     private favoriteService:FavoriteProvider,
-    private toastCtrl:ToastController) {
+    private toastCtrl:ToastController,
+    private actionCtrl:ActionSheetController,
+    private modalCtrl:ModalController) {
 
       this.dish = navParams.get('dish');
       this.favorite = this.favoriteService.isFavorite(this.dish.id);
@@ -50,6 +55,45 @@ export class DishdetailPage {
       position: 'middle',
       duration:3000
     }).present();
+  }
+
+
+  presentActionSheet() {
+    let actionSheet = this.actionCtrl.create({
+      title: 'Select Actions',
+      buttons: [
+        {
+          text: 'Add to Favorites',
+          handler: () =>{
+          this.addToFavorites();
+            } 
+        },
+
+        {
+        text: 'Add Comment',
+        handler: () =>{
+            let modal = this.modalCtrl.create(CommentsPage);
+            modal.onDidDismiss(
+              comment => {
+                if (comment) {
+                  this.dish.comments.push(comment);
+                }
+              }
+            )
+            modal.present();
+             }
+        },
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        }
+      ]
+    });
+ 
+    actionSheet.present();
   }
 
 }
