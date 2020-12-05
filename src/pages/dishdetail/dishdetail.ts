@@ -42,7 +42,7 @@ export class DishdetailPage {
   }
 
   addToFavorites(){
-    console.log('Adding shya', this.dish.name);
+    console.log('Adding', this.dish.name);
     this.favorite = this.favoriteService.addFavorite(this.dish.id);
   }
 

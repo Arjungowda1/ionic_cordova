@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Dish } from '../../shared/dish';
 import { DishProvider } from '../../providers/dish/dish';
 import { DishdetailPage } from '../dishdetail/dishdetail';
+import { FavoriteProvider } from '../../providers/favorite/favorite';
 /**
  * Generated class for the MenuPage page.
  *
@@ -23,7 +24,8 @@ export class MenuPage implements OnInit {
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,
     private dishService: DishProvider,
-    @Inject("BaseURL") private BaseURL ) {
+    @Inject("BaseURL") private BaseURL,
+    private favoriteService:FavoriteProvider ) {
   }
   ngOnInit(): void {
     this.dishService.getDishes()
@@ -39,7 +41,11 @@ export class MenuPage implements OnInit {
     this.navCtrl.push(DishdetailPage, {
       dish: dish
     });
+  }
 
+  addToFavorites(dish: Dish) {
+    console.log('Adding', dish.name);
+    this.favoriteService.addFavorite(dish.id);
   }
 
 }
