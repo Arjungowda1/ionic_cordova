@@ -1,7 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Dish } from '../../shared/dish';
-import { Comment } from '../../shared/comment';
+
 /**
  * Generated class for the DishdetailPage page.
  *

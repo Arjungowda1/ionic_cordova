@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import {  Http, Response } from '@angular/http';
 import { Dish } from '../../shared/dish';
 import { baseURL } from '../../shared/baseUrl';
 import { ProcessHttpMsgProvider } from '../process-http-msg/process-http-msg';
