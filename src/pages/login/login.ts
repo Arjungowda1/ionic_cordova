@@ -25,25 +25,27 @@ export class LoginPage {
     private formBuilder:FormBuilder,
     private storage:Storage) {
 
-      this.loginForm = this.formBuilder.group({
-        username: ['', Validators.required],
-        password: ['', Validators.required],
-        remember: true
-      });
 
       storage.get('user').then(user => {
-        if(user) {
+        if (user) {
+          console.log(user);
           this.user = user;
-          this.loginForm.patchValue({
-            'username':this.user.username,
-            'password':this.user.password
-          });
+          this.loginForm
+            .patchValue({
+              'username': this.user.username, 
+              'password': this.user.password 
+            });
         }
+        else
+          console.log('user not defined');
+      });
 
-        else{
-          console.log("user undefined");
-        }
-      })
+
+      this.loginForm = this.formBuilder.group({
+        username: ['', Validators.required],
+        password: ['',Validators.required],
+        remember: true
+      });
   }
 
   ionViewDidLoad() {
@@ -58,7 +60,7 @@ export class LoginPage {
     this.user.username = this.loginForm.get('username').value;
     this.user.password = this.loginForm.get('password').value;
 
-    if(this.loginForm.get('remember'))
+    if(this.loginForm.get('remember').value)
     {
       this.storage.set('user', this.user)
     }
