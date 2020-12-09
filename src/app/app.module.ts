@@ -20,6 +20,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
 import { EmailComposer } from '@ionic-native/email-composer/ngx';
+import { SocialSharing } from '@ionic-native/social-sharing/ngx';
 import { DishProvider } from '../providers/dish/dish';
 import { LeaderProvider } from '../providers/leader/leader';
 import { PromotionProvider } from '../providers/promotion/promotion';
@@ -69,6 +70,7 @@ import { FavoriteProvider } from '../providers/favorite/favorite';
     PromotionProvider,
     LocalNotifications,
     EmailComposer,
+    SocialSharing,
     ProcessHttpMsgProvider,
     {provide:'BaseURL', useValue:baseURL},
     FavoriteProvider
