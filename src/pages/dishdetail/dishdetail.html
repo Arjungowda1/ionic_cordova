@@ -16,6 +16,7 @@
 </ion-header>
 
 <ion-content>
+  <ion-grid>
   <ion-row align-items-center>
   <ion-col col-12 col-lg-6>
   <ion-card *ngIf="dish">
@@ -69,6 +70,7 @@
   </ion-list>
 </ion-col>
 </ion-row>
+</ion-grid>
   <ion-fab bottom right [hidden]="favorite"> 
     <button ion-fab (click)="addToFavorites()">
       <ion-icon  name="heart-outline"></ion-icon>

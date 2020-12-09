@@ -33,6 +33,7 @@ export class MyApp {
       { title: 'Menu' ,icon:'list-box',component: MenuPage },
       { title: 'Contact us',icon:'contact', component: ContactPage },
       { title: 'My Favorites',icon:'heart', component: MyfavoritesPage }
+  
     ];
 
   }
@@ -43,6 +44,7 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+      
     });
   }
 
@@ -58,7 +60,6 @@ export class MyApp {
     modal.present();
   }
   openLogin() {
-
     let modal = this.modalCtrl.create(LoginPage);
     modal.present();
   }
