@@ -24,6 +24,7 @@ import { EmailComposer } from '@ionic-native/email-composer/ngx';
 import { SocialSharing } from '@ionic-native/social-sharing/ngx';
 import { Camera } from '@ionic-native/camera/ngx';
 import { Network } from '@ionic-native/network/ngx';
+import { CallNumber } from '@ionic-native/call-number/ngx';
 import { DishProvider } from '../providers/dish/dish';
 import { LeaderProvider } from '../providers/leader/leader';
 import { PromotionProvider } from '../providers/promotion/promotion';
@@ -78,6 +79,7 @@ import { FavoriteProvider } from '../providers/favorite/favorite';
     SocialSharing,
     Camera,
     Network,
+    CallNumber,
     ProcessHttpMsgProvider,
     {provide:'BaseURL', useValue:baseURL},
     FavoriteProvider
