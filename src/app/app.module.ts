@@ -14,6 +14,7 @@ import { MyfavoritesPage } from '../pages/myfavorites/myfavorites';
 import { ReservationPage } from '../pages/reservation/reservation';
 import { CommentsPage } from '../pages/comments/comments';
 import { LoginPage } from '../pages/login/login';
+import { RegisterPage } from '../pages/register/register';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -21,6 +22,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
 import { EmailComposer } from '@ionic-native/email-composer/ngx';
 import { SocialSharing } from '@ionic-native/social-sharing/ngx';
+import { Camera } from '@ionic-native/camera/ngx';
 import { DishProvider } from '../providers/dish/dish';
 import { LeaderProvider } from '../providers/leader/leader';
 import { PromotionProvider } from '../providers/promotion/promotion';
@@ -39,7 +41,8 @@ import { FavoriteProvider } from '../providers/favorite/favorite';
     MyfavoritesPage,
     ReservationPage,
     CommentsPage,
-    LoginPage
+    LoginPage,
+    RegisterPage
   ],
   imports: [
     BrowserModule,
@@ -59,7 +62,8 @@ import { FavoriteProvider } from '../providers/favorite/favorite';
     MyfavoritesPage,
     ReservationPage,
     CommentsPage,
-    LoginPage
+    LoginPage,
+    RegisterPage
   ],
   providers: [
     StatusBar,
@@ -71,6 +75,7 @@ import { FavoriteProvider } from '../providers/favorite/favorite';
     LocalNotifications,
     EmailComposer,
     SocialSharing,
+    Camera,
     ProcessHttpMsgProvider,
     {provide:'BaseURL', useValue:baseURL},
     FavoriteProvider

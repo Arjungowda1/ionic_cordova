@@ -10,6 +10,7 @@ import { ContactPage } from '../pages/contact/contact';
 import { MyfavoritesPage } from '../pages/myfavorites/myfavorites';
 import { ReservationPage } from '../pages/reservation/reservation';
 import { LoginPage } from '../pages/login/login';
+import { RegisterPage } from '../pages/register/register';
 
 
 @Component({
